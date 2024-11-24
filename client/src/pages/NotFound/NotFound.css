@@ -1,0 +1,20 @@
+.not-found {
+  background-image: url("https://l-tech.ru/uploads/publication_post/main_image/122/full_screen_retina_e5f347c8e4.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.not-found h1 {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}

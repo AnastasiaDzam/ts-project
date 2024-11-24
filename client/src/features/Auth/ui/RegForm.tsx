@@ -28,6 +28,7 @@ function RegForm(): JSX.Element {
 
   return (
     <div>
+      <h2>Зарегистрироваться</h2>
       <form onSubmit={onSubmitHandler}>
         <input
           required

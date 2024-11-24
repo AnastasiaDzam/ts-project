@@ -5,6 +5,7 @@ import { UserType } from "../../features/Auth/type/UserType";
 import AuthApi from "../../features/Auth/api/AuthApi";
 import { setAccessToken } from "../../shared/lib/axiosInstance";
 import { router } from "../Router/Router";
+import Footer from "./Footer";
 
 function App(): JSX.Element {
   const [user, setUser] = useState<UserType | null>(null);
@@ -20,7 +21,8 @@ function App(): JSX.Element {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
+      <Footer />
     </UserContext.Provider>
   );
 }

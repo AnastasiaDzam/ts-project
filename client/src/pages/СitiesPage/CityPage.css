@@ -1,0 +1,62 @@
+/* General Page Styling */
+.city-page {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+  }
+  
+  .heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .city-select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .city-select:focus {
+    outline: none;
+    border-color: #007BFF;
+  }
+  
+  /* Weather Info Styling */
+  .weather-info {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subheading {
+    font-size: 22px;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  .weather-details {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .weather-details p {
+    margin: 5px 0;
+  }
+  
+  /* Loading Text */
+  .loading-text {
+    font-size: 18px;
+    color: #888;
+  }
+  

@@ -4,6 +4,7 @@ import { setAccessToken } from "../../../shared/lib/axiosInstance";
 import { UserContext } from "../../../app/Context/UserContext";
 import { UserType } from "../type/UserType";
 import { useNavigate } from "react-router-dom";
+import "./RegForm.css";
 
 function RegForm(): JSX.Element {
   const [name, setName] = useState<UserType["name"]>("");
@@ -51,7 +52,6 @@ function RegForm(): JSX.Element {
             minLength={3}
             onChange={(event) => setPassword(event.target.value)}
           />
-          
         </label>
         <input
           required
@@ -61,8 +61,8 @@ function RegForm(): JSX.Element {
           onChange={(event) => setConfirm(event.target.value)}
         />
         <button type="button" onClick={() => setShown((prev) => !prev)}>
-            👁
-          </button>
+          👁
+        </button>
         <button type="submit"> Отправить</button>
       </form>
     </div>

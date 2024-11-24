@@ -1,4 +1,5 @@
 import ListCities from "../../entities/Cities/ui/ListCity";
+import './CityPage.css';
 
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -131,26 +132,26 @@ function CityPage(): JSX.Element {
     fetchWeatherData(city);
   };
 
-  const fetchWeatherData = async(city: string) => {
-    // Пример URL для запроса погоды (вам нужно будет заменить на реальный API)
-    const weatherApi = '0381e7ef436142e897f131107242211'
-    const url = `https://api.weatherapi.com/v1/current.json?key=${weatherApi}&q=${city}&lang=ru`
+  const fetchWeatherData = async (city: string) => {
+    const weatherApi = '0381e7ef436142e897f131107242211';
+    const url = `https://api.weatherapi.com/v1/current.json?key=${weatherApi}&q=${city}&lang=ru`;
 
-    await axios.get(url)
-      .then(response => {
+    await axios
+      .get(url)
+      .then((response) => {
         console.log(response.data);
         setWeatherData(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error('Ошибка при получении данных о погоде:', error);
-      })
-  }
+      });
+  };
 
   return (
-    <div>
-      <h2>Выберите город:</h2>
-      <select name="cities" id="cities" onChange={handleCityChange}>
-        <option value="">Выберите город</option>
+    <div className="city-page">
+      <h2 className="heading">Выберите город:</h2>
+      <select className="city-select" name="cities" id="cities" onChange={handleCityChange}>
+        <option value="">Клик!</option>
         {AllCities.map((city, index) => (
           <option key={index} value={city}>
             {city}
@@ -159,21 +160,21 @@ function CityPage(): JSX.Element {
       </select>
 
       {selectedCity && (
-        <div>
-          <h3>Погода в городе {selectedCity}:</h3>
+        <div className="weather-info">
+          <h3 className="subheading">Погода в городе {selectedCity}:</h3>
           {weatherData ? (
-            <div>
+            <div className="weather-details">
               <p>Температура: {weatherData.current.temp_c}°C</p>
               <p>Описание: {weatherData.current.condition.text}</p>
               <p>Ветер: {weatherData.current.wind_kph} м/с</p>
             </div>
           ) : (
-            <p>Загрузка данных...</p>
+            <p className="loading-text">Загрузка данных...</p>
           )}
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
 export default CityPage;
